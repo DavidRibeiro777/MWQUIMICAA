@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MW Química | Soluções em Resinas de Alta Performance e Durabilidade</title>
+    <meta name="description" content="Especialistas em resinas poliéster e soluções para laminação, acabamento e aplicações técnicas. Qualidade para profissionais, empresas e projetos de alto desempenho.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0A1A3F',   // azul marinho profundo (padrão)
+                            800: '#1E2A5E',
+                            700: '#2A3A6E'
+                        },
+                        brand: { 
+                            orange: '#F15A24',      // laranja que remete a resinas
+                            orangeHover: '#DC4A18',
+                            lightOrange: '#FFF4ED' 
+                        },
+                        'light-gray': '#E5E7EB',    // cinza claro para bordas e textos secundários
+                    },
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'], 
+                        display: ['Outfit', 'sans-serif'] 
+                    },
+                    boxShadow: { 
+                        'soft': '0 10px 30px -15px rgba(0,0,0,0.1)',
+                        'header': '0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.02)'
+                    },
+                    animation: { 
+                        'float': 'float 6s ease-in-out infinite' 
+                    },
+                    keyframes: { 
+                        float: { 
+                            '0%, 100%': { transform: 'translateY(0px)' }, 
+                            '50%': { transform: 'translateY(-12px)' } 
+                        } 
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animações de revelação */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Link ativo com underline laranja */
+        .nav-link.active {
+            color: #F15A24 !important;
+        }
+        .nav-link.active::after {
+            width: 100% !important;
+        }
+        
+        /* Header com scroll */
+        .header-scrolled {
+            @apply py-2 bg-navy-900/95 shadow-header backdrop-blur-sm;
+            border-bottom-color: rgba(229, 231, 235, 0.5) !important;
+        }
+        
+        /* Efeito de hover nos links (underline) */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: #F15A24;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Selo MercadoLíder Gold */
+        .ml-gold-badge {
+            background: linear-gradient(135deg, #fff7c2 0%, #ffe36e 48%, #f6c343 100%);
+            color: #5c4500;
+            box-shadow: 0 10px 25px -12px rgba(160, 120, 0, 0.45);
+        }
+        .trust-strip {
+            box-shadow: 0 18px 45px -24px rgba(15, 23, 42, 0.35);
+        }
+
+        /* Cards de produtos */
+        .card-hover { transition: all 0.35s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2); }
+        
+        /* Botão primário */
+        .btn-primary { transition: all 0.2s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -5px rgba(241,90,36,0.4); }
+        
+        /* Placeholder para imagens (caso alguma falte) */
+        .image-placeholder { background-color: #f3f4f6; border: 2px dashed #d1d5db; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #6b7280; font-weight: 500; gap: 0.5rem; }
+        
+        /* Transição suave para o menu mobile */
+        .mobile-menu-transition {
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Escala visual global compacta (Equivalente ao Zoom 80% solicitado) */
+        @media (min-width: 768px) {
+            html {
+                font-size: 80%; /* Escala harmoniosa de todas as unidades rem do Tailwind */
+            }
+        }
+        
+        /* Melhorias de foco para acessibilidade */
+        *:focus-visible {
+            outline: 2px solid #F15A24;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-white text-navy-900 font-sans antialiased">
+
+<!-- ==================== HEADER REFORMULADO (UX/UI PROFISSIONAL) ==================== -->
+<header id="header" class="fixed w-full z-50 bg-navy-900 transition-all duration-300 py-4 border-b border-light-gray/30">
+    <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center">
+        <!-- Logo com micro-interação -->
+        <a href="#" class="text-2xl font-display font-bold tracking-tight group">
+            <span class="text-white">MW</span><span class="text-brand-orange">QUIMICA</span>
+            <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-brand-orange rounded-full"></span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8 lg:space-x-10">
+            <a href="#sobre" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Sobre</a>
+            <a href="#produtos" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Produtos</a>
+            <a href="#vitrine-produtos" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Catálogo</a>
+            <a href="#confianca" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Confiança</a>
+            <a href="#ofertas" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Comprar</a>
+            <a href="#novos-produtos" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Mais produtos</a>
+            <a href="#guia-compra" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Ajuda</a>
+            <a href="#aplicacoes" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Aplicações</a>
+            <a href="#contato" class="nav-link text-light-gray hover:text-brand-orange transition-colors duration-200 font-medium">Contato</a>
+            <a href="#contato" class="bg-brand-orange text-white px-6 py-2.5 rounded-full font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 focus:ring-2 focus:ring-brand-orange focus:ring-offset-2 focus:ring-offset-navy-900">
+                Fale Conosco
+            </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-brand-orange rounded-lg p-1" aria-label="Menu" aria-expanded="false">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay (com botão fechar) -->
+<div id="mobile-menu" class="fixed inset-0 bg-navy-900 z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold transition-transform duration-500 ease-out transform translate-x-full md:hidden mobile-menu-transition">
+    <button id="close-menu" class="absolute top-6 right-6 text-white focus:outline-none focus:ring-2 focus:ring-brand-orange rounded-full p-2" aria-label="Fechar menu">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+    <a href="#sobre" class="text-white hover:text-brand-orange transition transform hover:scale-105">Sobre</a>
+    <a href="#produtos" class="text-white hover:text-brand-orange transition transform hover:scale-105">Produtos</a>
+    <a href="#vitrine-produtos" class="text-white hover:text-brand-orange transition transform hover:scale-105">Catálogo</a>
+    <a href="#ofertas" class="text-white hover:text-brand-orange transition transform hover:scale-105">Comprar</a>
+    <a href="#guia-compra" class="text-white hover:text-brand-orange transition transform hover:scale-105">Ajuda</a>
+    <a href="#aplicacoes" class="text-white hover:text-brand-orange transition transform hover:scale-105">Aplicações</a>
+    <a href="#contato" class="text-white hover:text-brand-orange transition transform hover:scale-105">Contato</a>
+    <a href="#contato" class="bg-brand-orange text-white px-10 py-3 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">Fale Conosco</a>
+</div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+<!-- Seção Hero Reformulada - Corrigida para Mobile (imagem sem cortes) -->
+<section class="relative pt-36 pb-24 md:pt-44 md:pb-32 bg-gradient-to-br from-brand-lightOrange via-white to-white overflow-hidden">
+    
+    <!-- Elementos decorativos de fundo (remetendo à fluidez das resinas) -->
+    <div class="absolute inset-0 pointer-events-none">
+        <!-- Círculo difuso laranja -->
+        <div class="absolute top-20 -left-32 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl"></div>
+        <!-- Círculo difuso azul marinho -->
+        <div class="absolute bottom-10 -right-32 w-[500px] h-[500px] bg-navy-900/5 rounded-full blur-3xl"></div>
+        <!-- Formas orgânicas (ondas) no canto inferior direito -->
+        <svg class="absolute bottom-0 right-0 w-3/5 max-w-lg opacity-10" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#F15A24" d="M47.3,-65.1C60.1,-54.3,67.8,-36.8,71.9,-18.6C76,-0.4,76.4,18.6,68.9,33.5C61.4,48.5,46.1,59.4,29.7,66.2C13.3,73,-4.3,75.7,-20.8,71.4C-37.3,67.1,-52.7,55.8,-63.2,41.1C-73.7,26.4,-79.3,8.4,-76.6,-9C-73.9,-26.4,-62.9,-43.2,-48.5,-55.2C-34.1,-67.2,-16.3,-74.3,1.8,-76.5C19.9,-78.7,39.7,-75.9,47.3,-65.1Z" transform="translate(100 100) scale(1.2)" />
+        </svg>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Coluna de texto (esquerda) -->
+            <div class="reveal">
+            
+
+                <!-- Prova social de marketplace -->
+                <div class="flex flex-wrap items-center gap-3 mb-6">
+                    <div class="ml-gold-badge inline-flex items-center gap-2 px-4 py-2 rounded-full font-extrabold text-sm">
+                        <span class="text-lg">★</span> MercadoLíder Gold
+                    </div>
+                    <span class="text-sm font-semibold text-gray-600">Compra com a confiança de um vendedor MercadoLíder Gold</span>
+                </div>
+
+                <!-- Título principal com destaque laranja -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-display text-navy-900 leading-tight mb-6">
+                   Resinas e Materiais 
+                    <span class="text-brand-orange relative inline-block">
+                        Para projetos que exigem perfomance
+                        <!-- Sublinhado decorativo laranja -->
+                        <svg class="absolute -bottom-2 left-0 w-full h-3 text-brand-orange/30" viewBox="0 0 200 8" preserveAspectRatio="none">
+                            <path d="M0,5 Q25,3 50,5 T100,5 T150,5 T200,5" stroke="currentColor" fill="none" stroke-width="2" />
+                        </svg>
+                    </span>
+                </h1>
+
+                <!-- Descrição -->
+                <p class="text-base md:text-lg lg:text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
+                    Fornecemos soluções completas em resinas industriais com tecnologia de ponta para engenharia, arquitetura e revestimentos técnicos.
+                </p>
+
+                <!-- Botões CTA -->
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <a href="#ofertas" class="group bg-brand-orange text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <span>Comprar produtos</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    <a href="#sobre" class="border-2 border-navy-800/20 text-navy-900 px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-center hover:bg-navy-900 hover:text-white hover:border-navy-900 transition-all duration-300">
+                        Conheça a Empresa
+                    </a>
+                </div>
+
+                <!-- Selo de confiança / qualidade -->
+                <div class="flex flex-wrap gap-6 mt-10 pt-6 border-t border-gray-200">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-5 h-5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <span class="text-sm text-gray-500">Alto Padrão de Qualidade e Pureza</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna da imagem (direita) com efeito de brilho e moldura - CORRIGIDA PARA MOBILE -->
+            <div class="reveal delay-200 relative">
+                <!-- Efeito de brilho atrás da imagem -->
+                <div class="absolute -inset-4 bg-brand-orange/20 rounded-3xl blur-2xl opacity-70"></div>
+                
+                <!-- Moldura decorativa -->
+                <div class="relative bg-white rounded-2xl shadow-2xl p-2 border border-gray-100">
+                    <img src="img/3_por_4.jpg" alt="MW Química - Soluções em Resinas Poliéster" 
+                         class="w-full h-auto md:h-[440px] rounded-xl object-contain md:object-cover shadow-md transition-transform duration-700 hover:scale-[1.02]">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sobre a Empresa -->
+<!-- Seção Sobre Reformulada - Design Premium Textual Centralizado para MW Química -->
+<section id="sobre" class="py-24 md:py-32 bg-gradient-to-b from-white via-gray-50/50 to-white relative overflow-hidden">
+
+    <!-- Elementos decorativos de fundo -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-brand-orange/5 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute -bottom-10 left-10 w-72 h-72 bg-navy-900/5 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute top-1/3 right-10 w-80 h-80 bg-brand-lightOrange/60 rounded-full blur-3xl -z-10"></div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+
+        <!-- Cabeçalho Principal Centralizado -->
+        <div class="max-w-4xl mx-auto text-center mb-16 reveal">
+
+            <div class="inline-flex items-center gap-2 bg-brand-lightOrange px-4 py-1.5 rounded-full text-brand-orange font-bold text-xs uppercase tracking-wider mb-6 shadow-sm border border-brand-orange/15">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+                Sobre a MW Química
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-display text-navy-900 leading-tight mb-6">
+                Referência Nacional em
+                <span class="text-brand-orange relative inline-block">
+                    Resinas e aditivos
+                    <svg class="absolute -bottom-2.5 left-0 w-full h-3 text-brand-orange" viewBox="0 0 200 8" preserveAspectRatio="none">
+                        <path d="M0,4 Q50,0 100,4 T200,4"
+                              stroke="currentColor"
+                              fill="none"
+                              stroke-width="3"
+                              opacity="0.6"
+                              stroke-linecap="round" />
+                    </svg>
+                </span>
+            </h2>
+
+            <p class="text-gray-600 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                Com mais de <strong class="text-navy-900 font-bold">10 anos de atuação</strong>, consolidamos nossa excelência técnica no fornecimento de resinas poliéster, elastoméricas e acrílicas, dióxido de titânio, gel coats, mantas e catalisadores para indústrias e profissionais que não abrem mão de máximo desempenho.
+            </p>
+        </div>
+
+
+        <!-- Bloco de Destaque / Manifesto Técnico -->
+        <div class="max-w-5xl mx-auto mb-20 reveal">
+
+            <div class="relative bg-navy-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl overflow-hidden border border-white/10">
+
+                <!-- Brilho decorativo interno -->
+                <div class="absolute -right-20 -top-20 w-80 h-80 bg-brand-orange/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+
+                    <div class="max-w-2xl">
+
+                        <span class="text-brand-orange font-bold text-xs uppercase tracking-widest block mb-2">
+                            Compromisso com o seu projeto
+                        </span>
+
+                        <h3 class="text-2xl md:text-3xl font-bold font-display text-white mb-4">
+                            Fórmulas de alta pureza para resultados estruturais impecáveis.
+                        </h3>
+
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                            Desenvolvemos e distribuímos insumos químicos selecionados com rigorosa estabilidade de lote, alta molhabilidade e resistência química comprovada em mais de 10.000 projetos por todo o Brasil.
+                        </p>
+
+                    </div>
+
+                    <div class="flex-shrink-0">
+
+                        <a href="#contato"
+                           class="inline-flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orangeHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-lg hover:shadow-brand-orange/30 hover:-translate-y-0.5 transition-all duration-200">
+
+                            <span>Fale com Nossos Especialistas</span>
+
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M17 8l4 4m0 0l-4 4m4-4H3">
+                                </path>
+                            </svg>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== ESTATÍSTICAS ==================== -->
+        <div class="max-w-5xl mx-auto mb-20 reveal">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+
+                <!-- Card 1 -->
+                <div class="w-full bg-white rounded-2xl p-6 md:p-7 shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+
+                    <div class="flex items-center justify-between mb-5">
+
+                        <h4 class="text-3xl md:text-4xl font-black text-brand-orange group-hover:scale-105 transition-transform duration-300">
+                            10.000+
+                        </h4>
+
+                        <div class="w-11 h-11 rounded-xl bg-brand-lightOrange text-brand-orange flex items-center justify-center flex-shrink-0">
+
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-navy-900 font-bold text-sm mb-1">
+                        Projetos Atendidos
+                    </p>
+
+                    <p class="text-gray-500 text-xs leading-relaxed">
+                        Em todo o território nacional
+                    </p>
+
+                </div>
+
+
+                <!-- Card 2 -->
+                <div class="w-full bg-white rounded-2xl p-6 md:p-7 shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+
+                    <div class="flex items-center justify-between mb-5">
+
+                        <h4 class="text-3xl md:text-4xl font-black text-brand-orange group-hover:scale-105 transition-transform duration-300">
+                            24h
+                        </h4>
+
+                        <div class="w-11 h-11 rounded-xl bg-brand-lightOrange text-brand-orange flex items-center justify-center flex-shrink-0">
+
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-navy-900 font-bold text-sm mb-1">
+                        Suporte Técnico
+                    </p>
+
+                    <p class="text-gray-500 text-xs leading-relaxed">
+                        Orientação especializada
+                    </p>
+
+                </div>
+
+
+                <!-- Card 3 -->
+                <div class="w-full bg-white rounded-2xl p-6 md:p-7 shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+
+                    <div class="flex items-center justify-between mb-5">
+
+                        <h4 class="text-3xl md:text-4xl font-black text-brand-orange group-hover:scale-105 transition-transform duration-300">
+                            10+
+                        </h4>
+
+                        <div class="w-11 h-11 rounded-xl bg-brand-lightOrange text-brand-orange flex items-center justify-center flex-shrink-0">
+
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-navy-900 font-bold text-sm mb-1">
+                        Anos de Mercado
+                    </p>
+
+                    <p class="text-gray-500 text-xs leading-relaxed">
+                        Experiência e solidez
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================== 3 PILARES ==================== -->
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 lg:gap-14 pt-10 border-t border-gray-200/70 reveal">
+
+            <!-- Pilar 1 -->
+            <div class="flex items-start gap-4">
+
+                <div class="w-12 h-12 rounded-2xl bg-brand-lightOrange text-brand-orange flex items-center justify-center flex-shrink-0 shadow-sm">
+
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                        </path>
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h4 class="text-base font-bold font-display text-navy-900 mb-1">
+                        Fórmulas Padronizadas
+                    </h4>
+
+                    <p class="text-gray-600 text-xs leading-relaxed">
+                        Resinas e catalisadores com controle rigoroso de viscosidade, tempo de gel e cura homogênea.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pilar 2 -->
+            <div class="flex items-start gap-4">
+
+                <div class="w-12 h-12 rounded-2xl bg-brand-lightOrange text-brand-orange flex items-center justify-center flex-shrink-0 shadow-sm">
+
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h4 class="text-base font-bold font-display text-navy-900 mb-1">
+                        Atendimento Técnico
+                    </h4>
+
+                    <p class="text-gray-600 text-xs leading-relaxed">
+                        Suporte direto para auxiliar na escolha da resina certa, proporção de catalisador e modo de uso.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pilar 3 -->
+            <div class="flex items-start gap-4">
+
+                <div class="w-12 h-12 rounded-2xl bg-brand-lightOrange text-brand-orange flex items-center justify-center flex-shrink-0 shadow-sm">
+
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M13 10V3L4 14h7v7l9-11h-7z">
+                        </path>
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h4 class="text-base font-bold font-display text-navy-900 mb-1">
+                        Logística e Prontidão
+                    </h4>
+
+                    <p class="text-gray-600 text-xs leading-relaxed">
+                        Embalagens seguras e envios ágeis para garantir que a sua produção ou reforma não pare.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ==================== FAIXA DE CONFIANÇA ==================== -->
+<section class="relative z-20 -mt-8 mb-4 px-6">
+
+    <div class="container mx-auto max-w-6xl">
+
+        <div class="trust-strip bg-white rounded-2xl border border-gray-100 p-5 md:p-6">
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8 items-center">
+
+                <!-- Item 1 -->
+                <div class="flex items-center gap-3">
+
+                    <div class="w-11 h-11 rounded-xl bg-brand-lightOrange flex items-center justify-center text-brand-orange text-xl font-black flex-shrink-0">
+                        ★
+                    </div>
+
+                    <div>
+                        <p class="font-extrabold text-navy-900">
+                            MercadoLíder Gold
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            Reputação reconhecida
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Item 2 -->
+                <div class="flex items-center gap-3">
+
+                    <div class="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center text-navy-900 text-xl flex-shrink-0">
+                        ✓
+                    </div>
+
+                    <div>
+                        <p class="font-extrabold text-navy-900">
+                            Compra segura
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            Pagamento protegido
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Item 3 -->
+                <div class="flex items-center gap-3">
+
+                    <div class="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center text-navy-900 text-xl flex-shrink-0">
+                        ↗
+                    </div>
+
+                    <div>
+                        <p class="font-extrabold text-navy-900">
+                            Envio pelo marketplace
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            Acompanhe seu pedido
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Item 4 -->
+                <div class="flex items-center gap-3">
+
+                    <div class="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center text-brand-orange text-xl flex-shrink-0">
+                        ⚙
+                    </div>
+
+                    <div>
+                        <p class="font-extrabold text-navy-900">
+                            Suporte técnico
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            Ajuda para escolher
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== PROVA SOCIAL E CONFIANÇA ==================== -->
+<section id="confianca" class="py-20 bg-white relative overflow-hidden">
+
+    <div class="absolute top-0 right-0 w-72 h-72 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+
+        <!-- Cabeçalho -->
+        <div class="max-w-4xl mx-auto text-center mb-12 reveal">
+
+            <div class="inline-flex items-center gap-2 bg-brand-lightOrange px-4 py-2 rounded-full text-brand-orange font-bold text-sm mb-4">
+                <span>★</span>
+                Confiança que acompanha a compra
+            </div>
+
+            <h2 class="text-3xl md:text-5xl font-black font-display text-navy-900 leading-tight">
+                Por que comprar da
+                <span class="text-brand-orange">
+                    MW Química?
+                </span>
+            </h2>
+
+            <p class="text-gray-600 text-lg mt-5 leading-relaxed">
+                Você compra de uma empresa com experiência técnica e presença consolidada no Mercado Livre.
+                E, quando precisar, conta com suporte para escolher o produto adequado à sua aplicação.
+            </p>
+
+        </div>
+
+
+        <!-- Cards de confiança -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+
+            <!-- Card 1 -->
+            <div class="bg-gray-50 rounded-2xl p-6 md:p-7 border border-gray-100 reveal hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                <div class="text-3xl mb-4">
+                    🏆
+                </div>
+
+                <h3 class="font-black text-navy-900 text-lg mb-2">
+                    Mercado Líder Gold
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Reconhecimento dentro do Mercado Livre para vendedores de destaque.
+                </p>
+
+            </div>
+
+
+            <!-- Card 2 -->
+            <div class="bg-gray-50 rounded-2xl p-6 md:p-7 border border-gray-100 reveal delay-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                <div class="text-3xl mb-4">
+                    🧪
+                </div>
+
+                <h3 class="font-black text-navy-900 text-lg mb-2">
+                    +10 anos de experiência
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Experiência em resinas poliéster e soluções técnicas para diferentes aplicações.
+                </p>
+
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="bg-gray-50 rounded-2xl p-6 md:p-7 border border-gray-100 reveal delay-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                <div class="text-3xl mb-4">
+                    💬
+                </div>
+
+                <h3 class="font-black text-navy-900 text-lg mb-2">
+                    Suporte técnico
+                </h3>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Não sabe qual produto escolher? Conte sua aplicação e peça orientação.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Banner final -->
+        <div class="mt-12 max-w-5xl mx-auto bg-navy-900 rounded-3xl p-7 md:p-9 text-white reveal">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+                <div>
+
+                    <p class="text-brand-orange font-extrabold text-sm uppercase tracking-wider mb-2">
+                        Compra com mais segurança
+                    </p>
+
+                    <h3 class="text-2xl md:text-3xl font-black">
+                        A reputação da loja também faz parte da sua decisão.
+                    </h3>
+
+                    <p class="text-gray-300 mt-3 max-w-2xl leading-relaxed">
+                        O selo MercadoLíder Gold é concedido pelo Mercado Livre a vendedores que atendem aos critérios do programa.
+                        Por isso, colocamos essa informação em destaque para você comprar com mais confiança.
+                    </p>
+
+                </div>
+
+
+                <a href="#comprar"
+                   class="shrink-0 inline-flex items-center justify-center gap-2 bg-brand-orange text-white px-7 py-4 rounded-xl font-black shadow-lg hover:-translate-y-0.5 transition-all">
+
+                    Ver produtos
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Produtos -->
+<!-- Seção Produtos Reformulada - Design Premium para MW Química -->
+<section id="produtos" class="py-28 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    
+    <!-- Elementos decorativos de fundo -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-brand-orange/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-navy-900/5 rounded-full blur-3xl"></div>
+        <!-- Gotículas decorativas -->
+        <svg class="absolute top-1/4 left-5 w-12 h-12 text-brand-orange/10" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50,5 C50,5 70,40 70,65 C70,85 55,95 50,95 C45,95 30,85 30,65 C30,40 50,5 50,5 Z" />
+        </svg>
+        <svg class="absolute bottom-1/4 right-5 w-20 h-20 text-navy-900/5" viewBox="0 0 100 100" fill="currentColor">
+            <path d="M50,10 C50,10 75,50 75,75 C75,90 60,95 50,95 C40,95 25,90 25,75 C25,50 50,10 50,10 Z" />
+        </svg>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+        <!-- Cabeçalho da seção aprimorado -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 bg-brand-lightOrange px-4 py-1.5 rounded-full text-brand-orange font-semibold text-sm mb-4 shadow-sm">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                </svg>
+                Portfólio premium
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold font-display text-navy-900 mt-4">
+                Soluções <span class="text-brand-orange">Especializadas</span>
+            </h2>
+            <div class="flex justify-center mt-6">
+                <div class="w-20 h-1 bg-brand-orange rounded-full"></div>
+            </div>
+            <p class="text-gray-500 max-w-2xl mx-auto mt-6 text-lg">
+                Conheça nossas principais soluções em resinas poliéster, fibra de vidro, resinas acrílicas, pigmentos e acabamento para aplicações profissionais e industriais.
+            </p>
+        </div>
+
+        <!-- Grid de produtos (3 cards com melhorias visuais) -->
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+            
+            <!-- Produto 1 - Gel Coat Premium -->
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden reveal hover:-translate-y-2">
+                <!-- Badge flutuante -->
+                <div class="relative overflow-hidden">
+                    <img src="img/gel_coat_11.jpg" width="973" height="1200" alt="Gel Coat Premium" class="w-full aspect-[973/1200] object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                 
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-6 md:p-8">
+                    <h3 class="text-2xl font-bold font-display text-navy-900 mb-3 group-hover:text-brand-orange transition-colors">Gel Coat Premium</h3>
+                    <p class="text-gray-600 mb-5 leading-relaxed">
+                        Alta resistência química, mecânica e excelente acabamento estético. Ideal para  Piscinas, moldes, peças náuticas, banheiras e revestimentos industriais.
+                    </p>
+                    
+                    <!-- Benefícios com ícones melhorados -->
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="flex-shrink-0 w-5 h-5 bg-brand-orange/10 rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span>Proteção UV e brilho duradouro</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="flex-shrink-0 w-5 h-5 bg-brand-orange/10 rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span>Camada de alta impermeabilização</span>
+                            
+                        </li>
+                    </ul>
+
+                    <!-- Botão CTA com efeito -->
+                    <a href="#contato" class="group/btn relative overflow-hidden block text-center border-2 border-brand-orange text-brand-orange font-bold py-3 rounded-xl hover:bg-brand-orange hover:text-white transition-all duration-300">
+                        <span class="relative z-10 inline-flex items-center gap-2">
+                            Comprar / Ver opções
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Produto 2 - Resina Poliéster Cristal -->
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden reveal delay-100 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="img/fibra_de_vidro_1.webp" width="973" height="1200" alt="Resina Poliéster Cristal" class="w-full aspect-[973/1200] object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-6 md:p-8">
+                    <h3 class="text-2xl font-bold font-display text-navy-900 mb-3 group-hover:text-brand-orange transition-colors">Manta Fibra de Vidro</h3>
+                    <p class="text-gray-600 mb-5 leading-relaxed">
+                        Rolo de manta de fibra de vidro de 5kg para laminação manual e reparos estruturais. Composta por fios de vidro distribuídos uniformemente com ligante solúvel em estireno, garantindo máxima resistência mecânica..
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="flex-shrink-0 w-5 h-5 bg-brand-orange/10 rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span>Absorção rápida e total de resina poliéster e epóxi</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="flex-shrink-0 w-5 h-5 bg-brand-orange/10 rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span>Ideal para reforço em caixas d'água, piscinas, barcos e moldes</span>
+                        </li>
+                    </ul>
+                    <a href="#contato" class="group/btn relative overflow-hidden block text-center border-2 border-brand-orange text-brand-orange font-bold py-3 rounded-xl hover:bg-brand-orange hover:text-white transition-all duration-300">
+                        <span class="relative z-10 inline-flex items-center gap-2">
+                            Comprar / Ver opções
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Produto 3 - Poliéster de Laminação -->
+            <div class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden reveal delay-200 hover:-translate-y-2">
+                <div class="relative overflow-hidden">
+                    <img src="img/resina_poliester_laminacao_5kg_1.webp" width="973" height="1200" alt="Resina Poliéster de Laminação" class="w-full aspect-[973/1200] object-cover object-center transition-transform duration-700 group-hover:scale-105">
+                 
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-6 md:p-8">
+                    <h3 class="text-2xl font-bold font-display text-navy-900 mb-3 group-hover:text-brand-orange transition-colors">Poliéster de Laminação</h3>
+                    <p class="text-gray-600 mb-5 leading-relaxed">
+                        Formulação ortoftálica tixotrópica ideal para aplicação com fibra de vidro. Perfeita para reparos náuticos, caixas d'água e autopeças.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="flex-shrink-0 w-5 h-5 bg-brand-orange/10 rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span>Excelente impregnação da fibra</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="flex-shrink-0 w-5 h-5 bg-brand-orange/10 rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            <span>Cura rápida e alta resistência estrutural</span>
+                        </li>
+                    </ul>
+                    <a href="#contato" class="group/btn relative overflow-hidden block text-center border-2 border-brand-orange text-brand-orange font-bold py-3 rounded-xl hover:bg-brand-orange hover:text-white transition-all duration-300">
+                        <span class="relative z-10 inline-flex items-center gap-2">
+                            Comprar / Ver opções
+                            <svg class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ==================== VITRINE / CATÁLOGO DE PRODUTOS ==================== -->
+<section id="vitrine-produtos" class="py-28 bg-white relative overflow-hidden">
+    <!-- Elementos decorativos de fundo -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-10 left-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-0 w-96 h-96 bg-navy-900/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-lightOrange/40 rounded-full blur-3xl -z-10"></div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+        <!-- Cabeçalho da Seção -->
+        <div class="text-center mb-16 max-w-3xl mx-auto reveal">
+            <div class="inline-flex items-center gap-2 bg-brand-lightOrange px-4 py-1.5 rounded-full text-brand-orange font-semibold text-sm mb-4 shadow-sm">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                </svg>
+                Catálogo Direto
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold font-display text-navy-900 mt-2 leading-tight">
+                Nossos Produtos em <span class="text-brand-orange relative inline-block">
+                    Destaque
+                    <svg class="absolute -bottom-2 left-0 w-full h-2 text-brand-orange/40" viewBox="0 0 200 6" preserveAspectRatio="none">
+                        <path d="M0,3 Q25,0 50,3 T100,3 T150,3 T200,3" stroke="currentColor" fill="none" stroke-width="2" />
+                    </svg>
+                </span>
+            </h2>
+            <div class="flex justify-center mt-6 mb-4">
+                <div class="w-20 h-1 bg-brand-orange rounded-full"></div>
+            </div>
+            <p class="text-gray-600 text-lg leading-relaxed">
+                Adquira materiais com qualidade industrial comprovada com suporte técnico personalizado via WhatsApp ou através da nossa loja oficial no Mercado Livre com envio rápido.
+            </p>
+        </div>
+
+        <!-- Grid de 6 Produtos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- CARD 1: Resina Poliéster Laminação 5kg + Catalisador 100gr -->
+            <div class="product-card group/card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal hover:-translate-y-1.5">
+                <!-- Carrossel de Imagens (5 Slides - Padrão 973x1200px) -->
+                <div class="product-carousel relative w-full aspect-[973/1200] overflow-hidden bg-gray-100 group/carousel">
+                    <!-- Badge de Categoria Flutuante -->
+                    <span class="absolute top-3 left-3 bg-navy-900/85 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full z-20 shadow-sm">
+                        Laminação & Fibra
+                    </span>
+
+                    <!-- Slides de Imagens -->
+                    <div class="carousel-track relative w-full h-full">
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 z-10">
+                            <img src="img/resina_poliester_laminacao_5kg_1.webp" width="973" height="1200" alt="Resina Poliéster Laminação 5kg + Catalisador 100gr - Capa" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_laminacao_5kg_2.webp" width="973" height="1200" alt="Resina Poliéster Laminação 5kg + Catalisador 100gr - Vista 2" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_laminacao_5kg_3.webp" width="973" height="1200" alt="Resina Poliéster Laminação 5kg + Catalisador 100gr - Vista 3" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_laminacao_5kg_4.webp" width="973" height="1200" alt="Resina Poliéster Laminação 5kg + Catalisador 100gr - Vista 4" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_laminacao_5kg_5.webp" width="973" height="1200" alt="Resina Poliéster Laminação 5kg + Catalisador 100gr - Detalhes" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+
+                    <!-- Botões de Navegação Lateral -->
+                    <button type="button" class="carousel-prev absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Imagem anterior">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="carousel-next absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Próxima imagem">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores de Paginação (5 Dots) -->
+                    <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center items-center gap-1.5 z-20">
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-brand-orange w-5" aria-label="Ir para slide 1"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 2"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 3"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 4"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 5"></button>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Textual -->
+                <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Kit Completo de Laminação</span>
+                        <h3 class="text-xl font-bold font-display text-navy-900 mb-2 group-hover/card:text-brand-orange transition-colors">
+                            Resina Poliéster Laminação 5kg + Catalisador 50 gr
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Resina ortoftálica pré-acelerada e tixotrópica para laminação com fibra de vidro. Alta fluidez para impregnação perfeita em caixas d'água, piscinas, reparos náuticos e automotivos.
+                        </p>
+
+                        <!-- Benefícios -->
+                        <ul class="space-y-2.5 mb-6">
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Acompanha 100g de Catalisador MEKP proporcional</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Rápida molhabilidade da manta e cura uniforme</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Excelente resistência mecânica, química e estanqueidade</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Duplo Botão CTA -->
+                    <div class="flex flex-col gap-2.5 mt-4 pt-4 border-t border-gray-100">
+                        <a href="https://wa.me/5511989810614?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20Resina%20Poli%C3%A9ster%20Lamina%C3%A7%C3%A3o%205kg%20%2B%20Catalisador%20100gr" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                            <svg class="w-4 h-4 text-emerald-600 group-hover/btn:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                            </svg>
+                            <span>Comprar na Loja (WhatsApp)</span>
+                        </a>
+                        <a href="https://www.mercadolivre.com.br/resina-poliester-laminacao-5kg-com-catalisador-50gr/up/MLBU1435981619?pdp_filters=seller_id%3A5626396#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=1&type=product&tracking_id=bb3bb07a-e004-4b61-99fd-0d9072f4ecfd&wid=MLB2941135155&sid=search" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                            <span>Comprar no Mercado Livre</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2: Resina Poliester C/ Catalisador 2kg + 2kg Talco Industrial -->
+            <div class="product-card group/card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal delay-100 hover:-translate-y-1.5">
+                <!-- Carrossel de Imagens (5 Slides - Padrão 973x1200px) -->
+                <div class="product-carousel relative w-full aspect-[973/1200] overflow-hidden bg-gray-100 group/carousel">
+                    <!-- Badge de Categoria Flutuante -->
+                    <span class="absolute top-3 left-3 bg-navy-900/85 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full z-20 shadow-sm">
+                        Resina & Cargas
+                    </span>
+
+                    <!-- Slides de Imagens -->
+                    <div class="carousel-track relative w-full h-full">
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 z-10">
+                            <img src="img/16.jpg" width="973" height="1200" alt="Resina Poliester C/ Catalisador 2kg + 2kg Talco Industrial - Capa" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_5kg_mais_manta_3kg_2.jpg" width="973" height="1200" alt="Resina Poliester C/ Catalisador 2kg + 2kg Talco Industrial - Vista 2" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/2.jpg" width="973" height="1200" alt="Resina Poliester C/ Catalisador 2kg + 2kg Talco Industrial - Vista 3" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/14.jpg" width="973" height="1200" alt="Resina Poliester C/ Catalisador 2kg + 2kg Talco Industrial - Vista 4" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/15.jpg" width="973" height="1200" alt="Resina Poliester C/ Catalisador 2kg + 2kg Talco Industrial - Detalhes" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+
+                    <!-- Botões de Navegação Lateral -->
+                    <button type="button" class="carousel-prev absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Imagem anterior">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="carousel-next absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Próxima imagem">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores de Paginação (5 Dots) -->
+                    <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center items-center gap-1.5 z-20">
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-brand-orange w-5" aria-label="Ir para slide 1"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 2"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 3"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 4"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 5"></button>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Textual -->
+                <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Kit Massa & Enchimento</span>
+                        <h3 class="text-xl font-bold font-display text-navy-900 mb-2 group-hover/card:text-brand-orange transition-colors">
+                            Resina Poliester 5kg + 3kg Manta Fibra De Vidro
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            
+Resina de Poliéster Ortoftálica para uso geral com Catalisador e manta de fibra de vidro 450
+
+                        </p>
+
+                        <!-- Benefícios -->
+                        <ul class="space-y-2.5 mb-6">
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Laminações com Fibra de Vidro e Resinas.</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Confecção de produtos feitos em Fibra de Vidro como Piscinas, Caixas Seladas, Caixas D'Água.</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Reparos em Piscinas, Caixas D'Água, Para-choques.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Duplo Botão CTA -->
+                    <div class="flex flex-col gap-2.5 mt-4 pt-4 border-t border-gray-100">
+                        <a href="https://wa.me/5511989810614?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20Resina%20Poliester%20C%2F%20Catalisador%202kg%20%2B%202kg%20Talco%20Industrial" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                            <svg class="w-4 h-4 text-emerald-600 group-hover/btn:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                            </svg>
+                            <span>Comprar na Loja (WhatsApp)</span>
+                        </a>
+                        <a href="https://www.mercadolivre.com.br/resina-poliester-c-catalisador-2kg--2kg-talco-industrial/up/MLBU1441229814?pdp_filters=seller_id%3A5626396#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=4&type=product&tracking_id=046e27d4-b854-4c50-aa74-6e1a1aa9cee6&wid=MLB3286032629&sid=search" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                            <span>Comprar no Mercado Livre</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3: Resina Poliéster Cristal 1kg C/ Proteção Uv E Catalizador -->
+            <div class="product-card group/card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal delay-200 hover:-translate-y-1.5">
+                <!-- Carrossel de Imagens (5 Slides - Padrão 973x1200px) -->
+                <div class="product-carousel relative w-full aspect-[973/1200] overflow-hidden bg-gray-100 group/carousel">
+                    <!-- Badge de Categoria Flutuante -->
+                    <span class="absolute top-3 left-3 bg-navy-900/85 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full z-20 shadow-sm">
+                        Resina Cristal
+                    </span>
+
+                    <!-- Slides de Imagens -->
+                    <div class="carousel-track relative w-full h-full">
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 z-10">
+                            <img src="img/resina_poliester_cristal_1kg_1.jpg" width="973" height="1200" alt="Resina Poliéster Cristal 1kg C/ Proteção Uv E Catalizador - Capa" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_cristal_1kg_2.webp" width="973" height="1200" alt="Resina Poliéster Cristal 1kg C/ Proteção Uv E Catalizador - Vista 2" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_cristal_1kg_3.webp" width="973" height="1200" alt="Resina Poliéster Cristal 1kg C/ Proteção Uv E Catalizador - Vista 3" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_cristal_1kg_4.webp" width="973" height="1200" alt="Resina Poliéster Cristal 1kg C/ Proteção Uv E Catalizador - Vista 4" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/resina_poliester_cristal_1kg_5.webp" width="973" height="1200" alt="Resina Poliéster Cristal 1kg C/ Proteção Uv E Catalizador - Detalhes" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+
+                    <!-- Botões de Navegação Lateral -->
+                    <button type="button" class="carousel-prev absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Imagem anterior">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="carousel-next absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Próxima imagem">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores de Paginação (5 Dots) -->
+                    <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center items-center gap-1.5 z-20">
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-brand-orange w-5" aria-label="Ir para slide 1"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 2"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 3"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 4"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 5"></button>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Textual -->
+                <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Proteção UV & Transparência</span>
+                        <h3 class="text-xl font-bold font-display text-navy-900 mb-2 group-hover/card:text-brand-orange transition-colors">
+                            Resina Poliéster Cristal 1kg C/ Proteção Uv E Catalizador
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Resina translúcida de altíssima pureza com aditivo protetor contra radiação solar. Especialmente formulada para artesanato de luxo, mesas resinadas (*river tables*), brindes, orgonites e chaveiros.
+                        </p>
+
+                        <!-- Benefícios -->
+                        <ul class="space-y-2.5 mb-6">
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Filtro anti-UV avançado contra amarelamento precoce</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Acabamento vitrificado cristalino e liberação fácil de bolhas</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Acompanha catalisador MEKP com dosagem precisa</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Duplo Botão CTA -->
+                    <div class="flex flex-col gap-2.5 mt-4 pt-4 border-t border-gray-100">
+                        <a href="https://wa.me/5511989810614?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20Resina%20Poli%C3%A9ster%20Cristal%201kg%20C%2F%20Prote%C3%A7%C3%A3o%20Uv%20E%20Catalizador" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                            <svg class="w-4 h-4 text-emerald-600 group-hover/btn:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                            </svg>
+                            <span>Comprar na Loja (WhatsApp)</span>
+                        </a>
+                        <a href="https://www.mercadolivre.com.br/resina-poliester-cristal-1kg-c-protecao-uv-e-catalizador/up/MLBU1452191070?pdp_filters=seller_id%3A5626396#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=15&type=product&tracking_id=2fb30aab-f6d0-46be-ab32-167d6606febb&wid=MLB3516883209&sid=search" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                            <span>Comprar no Mercado Livre</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 4: Manta Fibra de Vidro 5kg -->
+            <div class="product-card group/card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal hover:-translate-y-1.5">
+                <!-- Carrossel de Imagens (5 Slides - Padrão 973x1200px) -->
+                <div class="product-carousel relative w-full aspect-[973/1200] overflow-hidden bg-gray-100 group/carousel">
+                    <!-- Badge de Categoria Flutuante -->
+                    <span class="absolute top-3 left-3 bg-navy-900/85 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full z-20 shadow-sm">
+                        Fibras & Reforços
+                    </span>
+
+                    <!-- Slides de Imagens -->
+                    <div class="carousel-track relative w-full h-full">
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 z-10">
+                            <img src="img/fibra_de_vidro_1.webp" width="973" height="1200" alt="Manta Fibra de Vidro 5kg - Capa" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/fibra_de_vidro_2.webp" width="973" height="1200" alt="Manta Fibra de Vidro 5kg - Vista 2" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/fibra_de_vidro_3.webp" width="973" height="1200" alt="Manta Fibra de Vidro 5kg - Vista 3" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/fibra_de_vidro_4.webp" width="973" height="1200" alt="Manta Fibra de Vidro 5kg - Vista 4" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/fibra_de_vidro_5.webp" width="973" height="1200" alt="Manta Fibra de Vidro 5kg - Detalhes" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+
+                    <!-- Botões de Navegação Lateral -->
+                    <button type="button" class="carousel-prev absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Imagem anterior">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="carousel-next absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Próxima imagem">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores de Paginação (5 Dots) -->
+                    <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center items-center gap-1.5 z-20">
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-brand-orange w-5" aria-label="Ir para slide 1"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 2"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 3"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 4"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 5"></button>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Textual -->
+                <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Reforço Estrutural PRFV</span>
+                        <h3 class="text-xl font-bold font-display text-navy-900 mb-2 group-hover/card:text-brand-orange transition-colors">
+                            Manta Fibra de Vidro 5kg
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Rolo de manta de fibra de vidro de 5kg para laminação manual e reparos estruturais. Composta por fios de vidro distribuídos uniformemente com ligante solúvel em estireno, garantindo máxima resistência mecânica.
+                        </p>
+
+                        <!-- Benefícios -->
+                        <ul class="space-y-2.5 mb-6">
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Rolo contínuo de 5kg com excelente rendimento em m²</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Absorção rápida e total de resina poliéster e epóxi</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Ideal para reforço em caixas d'água, piscinas, barcos e moldes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Duplo Botão CTA -->
+                    <div class="flex flex-col gap-2.5 mt-4 pt-4 border-t border-gray-100">
+                        <a href="https://wa.me/5511989810614?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20manta%20fibra%20de%20vidro%205kg" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                            <svg class="w-4 h-4 text-emerald-600 group-hover/btn:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                            </svg>
+                            <span>Comprar na Loja (WhatsApp)</span>
+                        </a>
+                        <a href="https://www.mercadolivre.com.br/manta-fibra-de-vidro-5kg/up/MLBU1429829088?pdp_filters=seller_id%3A5626396#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=17&type=product&tracking_id=969d9c99-fe41-411b-9bdf-c5043c5e84f6&wid=MLB2208528352&sid=search" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                            <span>Comprar no Mercado Livre</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 5: Gel Coat Isoftalico C/ Proteção Uv 10kg E 200gr Catalisador -->
+            <div class="product-card group/card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal delay-100 hover:-translate-y-1.5">
+                <!-- Carrossel de Imagens (5 Slides - Padrão 973x1200px) -->
+                <div class="product-carousel relative w-full aspect-[973/1200] overflow-hidden bg-gray-100 group/carousel">
+                    <!-- Badge de Categoria Flutuante -->
+                    <span class="absolute top-3 left-3 bg-navy-900/85 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full z-20 shadow-sm">
+                        Gel Coat Isoftálico
+                    </span>
+
+                    <!-- Slides de Imagens -->
+                    <div class="carousel-track relative w-full h-full">
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 z-10">
+                            <img src="img/gel_coat_11.jpg" width="973" height="1200" alt="Gel Coat Isoftalico C/ Proteção Uv 10kg E 200gr Catalisador - Capa" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_1.jpeg" width="973" height="1200" alt="Gel Coat Isoftalico C/ Proteção Uv 10kg E 200gr Catalisador - Vista 2" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_branco_3.jpg" width="973" height="1200" alt="Gel Coat Isoftalico C/ Proteção Uv 10kg E 200gr Catalisador - Vista 3" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_2.jpeg" width="973" height="1200" alt="Gel Coat Isoftalico C/ Proteção Uv 10kg E 200gr Catalisador - Vista 4" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_isoftalico_5.webp" width="973" height="1200" alt="Gel Coat Isoftalico C/ Proteção Uv 10kg E 200gr Catalisador - Detalhes" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+
+                    <!-- Botões de Navegação Lateral -->
+                    <button type="button" class="carousel-prev absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Imagem anterior">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="carousel-next absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Próxima imagem">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores de Paginação (5 Dots) -->
+                    <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center items-center gap-1.5 z-20">
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-brand-orange w-5" aria-label="Ir para slide 1"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 2"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 3"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 4"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 5"></button>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Textual -->
+                <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Proteção Náutica & UV</span>
+                        <h3 class="text-xl font-bold font-display text-navy-900 mb-2 group-hover/card:text-brand-orange transition-colors">
+                            Gel Coat Isoftalico C/ Proteção Uv 10kg E 200gr Catalisador
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Gel Coat de base isoftálica pura com aditivos anti-UV de alta performance. Proporciona barreira impermeável de alto brilho e proteção contra hidrólise (osmose) em piscinas, barcos, caixas e moldes.
+                        </p>
+
+                        <!-- Benefícios -->
+                        <ul class="space-y-2.5 mb-6">
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Acompanha 200g de Catalisador MEKP proporcional para 10kg</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Barreira química anti-osmose e alta resistência à água</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Proteção contra desbotamento solar e excelente polimento</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Duplo Botão CTA -->
+                    <div class="flex flex-col gap-2.5 mt-4 pt-4 border-t border-gray-100">
+                        <a href="https://wa.me/5511989810614?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20Gel%20Coat%20Isoftalico%20C%2F%20Prote%C3%A7%C3%A3o%20Uv%2010kg%20E%20200gr%20Catalisador" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                            <svg class="w-4 h-4 text-emerald-600 group-hover/btn:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                            </svg>
+                            <span>Comprar na Loja (WhatsApp)</span>
+                        </a>
+                        <a href="https://www.mercadolivre.com.br/gel-coat-isoftalico-c-protecao-uv-10kg-e-200gr-catalisador/up/MLBU1448599707?pdp_filters=seller_id%3A5626396#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=39&type=product&tracking_id=3e57282b-ec4c-4df2-a9fc-061f448fdca7&wid=MLB3530832497&sid=search" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                            <span>Comprar no Mercado Livre</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 6: Gel Coat Iso Npg Uv Branco 15kg C/ Catalizador -->
+            <div class="product-card group/card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 flex flex-col overflow-hidden reveal delay-200 hover:-translate-y-1.5">
+                <!-- Carrossel de Imagens (5 Slides - Padrão 973x1200px) -->
+                <div class="product-carousel relative w-full aspect-[973/1200] overflow-hidden bg-gray-100 group/carousel">
+                    <!-- Badge de Categoria Flutuante -->
+                    <span class="absolute top-3 left-3 bg-navy-900/85 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full z-20 shadow-sm">
+                        Gel Coat NPG Premium
+                    </span>
+
+                    <!-- Slides de Imagens -->
+                    <div class="carousel-track relative w-full h-full">
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-100 z-10">
+                            <img src="img/gel_coat_branco_1.jpg" width="973" height="1200" alt="Gel Coat Iso Npg Uv Branco 15kg C/ Catalizador - Capa" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_branco_2.jpg" width="973" height="1200" alt="Gel Coat Iso Npg Uv Branco 15kg C/ Catalizador - Vista 2" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_branco_3.jpg" width="973" height="1200" alt="Gel Coat Iso Npg Uv Branco 15kg C/ Catalizador - Vista 3" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_branco_4.jpg" width="973" height="1200" alt="Gel Coat Iso Npg Uv Branco 15kg C/ Catalizador - Vista 4" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slide absolute inset-0 transition-opacity duration-500 ease-in-out opacity-0 pointer-events-none z-0">
+                            <img src="img/gel_coat_branco_5.jpg" width="973" height="1200" alt="Gel Coat Iso Npg Uv Branco 15kg C/ Catalizador - Detalhes" class="w-full h-full object-cover object-center">
+                        </div>
+                    </div>
+
+                    <!-- Botões de Navegação Lateral -->
+                    <button type="button" class="carousel-prev absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Imagem anterior">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="carousel-next absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-navy-900/70 hover:bg-brand-orange text-white flex items-center justify-center backdrop-blur-sm transition-all duration-200 opacity-0 group-hover/carousel:opacity-100 focus:opacity-100 z-20 shadow-md" aria-label="Próxima imagem">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores de Paginação (5 Dots) -->
+                    <div class="carousel-dots absolute bottom-3 left-0 right-0 flex justify-center items-center gap-1.5 z-20">
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-brand-orange w-5" aria-label="Ir para slide 1"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 2"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 3"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 4"></button>
+                        <button type="button" class="carousel-dot h-2 rounded-full transition-all duration-300 bg-white/70 hover:bg-white w-2" aria-label="Ir para slide 5"></button>
+                    </div>
+                </div>
+
+                <!-- Conteúdo Textual -->
+                <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Máxima Resistência & NPG</span>
+                        <h3 class="text-xl font-bold font-display text-navy-900 mb-2 group-hover/card:text-brand-orange transition-colors">
+                            Gel Coat Iso Npg Uv Branco 15kg C/ Catalizador
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            A tecnologia mais nobre de Gel Coat com Neopentilglicol (NPG) e filtro UV reforçado na cor branca. Altíssima retenção de brilho, resistência superior a produtos químicos, intempéries e água aquecida.
+                        </p>
+
+                        <!-- Benefícios -->
+                        <ul class="space-y-2.5 mb-6">
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Tecnologia Isoftálica com NPG para máxima durabilidade</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Balde industrial de 15kg completo com catalisador MEKP</span>
+                            </li>
+                            <li class="flex items-start gap-2 text-xs text-gray-700 font-medium">
+                                <span class="flex-shrink-0 w-4 h-4 bg-brand-lightOrange text-brand-orange rounded-full flex items-center justify-center mt-0.5">
+                                    <svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                                </span>
+                                <span>Brilho espelhado, resistente a riscos, manchas e calcinação</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Duplo Botão CTA -->
+                    <div class="flex flex-col gap-2.5 mt-4 pt-4 border-t border-gray-100">
+                        <a href="https://wa.me/5511989810614?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20produto%20Gel%20Coat%20Iso%20Npg%20Uv%20Branco%2015kg%20C%2F%20Catalizador" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn">
+                            <svg class="w-4 h-4 text-emerald-600 group-hover/btn:text-emerald-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                            </svg>
+                            <span>Comprar na Loja (WhatsApp)</span>
+                        </a>
+                        <a href="https://www.mercadolivre.com.br/gel-coat-iso-npg-uv-branco-15kg-c-catalizador/up/MLBU1448034592?pdp_filters=seller_id%3A5626396#polycard_client=search-desktop&be_origin=backend&overlay_label=not_apply&search_layout=grid&position=7&type=product&tracking_id=35f98349-6a89-4e41-8c73-d812c0fb8214&wid=MLB3466634747&sid=search" 
+                           target="_blank" rel="noopener noreferrer" 
+                           class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-bold py-2.5 px-4 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                            <span>Comprar no Mercado Livre</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+
+
+
+
+
+    <!-- ==================== GUIA DE COMPRA / CONVERSÃO ==================== -->
+    <section id="guia-compra" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-20 right-0 w-80 h-80 bg-brand-orange/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-72 h-72 bg-navy-900/5 rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 lg:px-8 relative z-10">
+           
+
+
+
+            <div class="mt-10 rounded-3xl bg-navy-900 p-7 md:p-9 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <div>
+                    <span class="text-brand-orange text-sm font-black uppercase tracking-wider">Ainda em dúvida?</span>
+                    <h3 class="text-white text-2xl md:text-3xl font-bold font-display mt-1">Não compre o produto errado.</h3>
+                    <p class="text-white/65 mt-2">Conte sua aplicação, quantidade e objetivo. A MW Química ajuda você a escolher a opção adequada.</p>
+                </div>
+                <a href="#contato" class="shrink-0 inline-flex items-center justify-center gap-2 bg-brand-orange text-white px-7 py-4 rounded-xl font-black shadow-lg hover:bg-brand-orangeHover hover:-translate-y-0.5 transition-all">Quero ajuda para escolher →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aplicações -->
+<!-- Seção Aplicações Reformulada - Imagens Totalmente Visíveis -->
+<section id="aplicacoes" class="py-28 bg-white relative overflow-hidden">
+    
+    <!-- Elementos decorativos de fundo sutis -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-20 left-10 w-64 h-64 bg-brand-orange/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-navy-900/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 bg-brand-lightOrange px-4 py-1.5 rounded-full text-brand-orange font-semibold text-sm mb-4 shadow-sm">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd" />
+                </svg>
+                Cases e Aplicações Práticas
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold font-display text-navy-900 mt-4">
+                Exemplos de <span class="text-brand-orange">Aplicação</span>
+            </h2>
+            <div class="flex justify-center mt-6">
+                <div class="w-20 h-1 bg-brand-orange rounded-full"></div>
+            </div>
+            <p class="text-gray-500 max-w-2xl mx-auto mt-6 text-lg">
+                Do revestimento de piscinas e telhados à impermeabilização definitiva de lajes com manta e resinas, entregamos máxima durabilidade e estanqueidade.
+            </p>
+        </div>
+
+        <!-- Grid de aplicações com cards limpos (imagem + texto separado) -->
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+            
+            <!-- Card 1 - Piscinas -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 reveal hover:-translate-y-1">
+                <div class="relative overflow-hidden">
+                    <img src="img/piscinas.jpg" width="973" height="1200" alt="Fabricação e reforma de piscinas em fibra de vidro com resina poliéster e gel coat" 
+                         class="w-full aspect-[973/1200] object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                    <!-- Pequeno badge flutuante -->
+                    <div class="absolute top-3 left-3 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
+                        Aplicação nº1
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold font-display text-navy-900 mb-2">Piscinas</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Fabricação, laminação e reforma de piscinas em fibra de vidro e gel coat com alta proteção UV, vedação total e resistência química.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">Impermeabilização</span>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">Proteção UV</span>
+                    </div>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-brand-orange font-semibold text-sm hover:gap-2 transition-all">
+                        Solicitar orçamento
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2 - Telhados -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 reveal delay-100 hover:-translate-y-1">
+                <div class="relative overflow-hidden">
+                    <img src="img/telhados_app.jpg" width="973" height="1200" alt="Impermeabilização e proteção de telhados e telhas com resina" 
+                         class="w-full aspect-[973/1200] object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-3 left-3 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
+                        Aplicação nº2
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold font-display text-navy-900 mb-2">Telhados</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Proteção, vedação e restauração de telhas cerâmicas, fibrocimento e metálicas com resina impermeabilizante de alta durabilidade e repelência.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">Proteção UV & Chuva</span>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">Vedação Estanque</span>
+                    </div>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-brand-orange font-semibold text-sm hover:gap-2 transition-all">
+                        Solicitar orçamento
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 3 - Manta Líquida para Laje -->
+            <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 reveal delay-200 hover:-translate-y-1">
+                <div class="relative overflow-hidden">
+                    <img src="img/manta_liquida_laje_app.jpg" width="973" height="1200" alt="Aplicação de manta líquida e fibra de vidro para impermeabilização de laje" 
+                         class="w-full aspect-[973/1200] object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute top-3 left-3 bg-brand-orange text-white text-xs font-bold px-2 py-1 rounded-full shadow-md">
+                        Aplicação nº3
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold font-display text-navy-900 mb-2">Manta Líquida para Laje</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Sistema impermeabilizante de alta performance reforçado com manta de fibra de vidro, eliminando infiltrações, umidade e trincas em lajes.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">Zero Infiltrações</span>
+                        <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">Reforço Estrutural</span>
+                    </div>
+                    <a href="#contato" class="inline-flex items-center gap-1 text-brand-orange font-semibold text-sm hover:gap-2 transition-all">
+                        Solicitar orçamento
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de estatísticas (opcional, mantida e realçada) -->
+        <div class="mt-20 bg-navy-900 rounded-3xl overflow-hidden shadow-xl">
+            <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                <div class="p-8 text-center">
+                    <div class="text-brand-orange text-4xl font-black mb-2">+10.000</div>
+                    <p class="text-white/80 text-sm">Projetos executados com nossas resinas</p>
+                </div>
+                <div class="p-8 text-center">
+                    <div class="text-brand-orange text-4xl font-black mb-2">98%</div>
+                    <p class="text-white/80 text-sm">Clientes que recomendam nossos produtos</p>
+                </div>
+                <div class="p-8 text-center">
+                    <div class="text-brand-orange text-4xl font-black mb-2">10+</div>
+                    <p class="text-white/80 text-sm">Anos de expertise em aplicações técnicas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Opiniões de Nossos Clientes (Avaliações Reais no Mercado Livre) -->
+<section id="opinioes" class="py-24 bg-gradient-to-b from-brand-orange/5 to-white relative overflow-hidden">
+    
+    <!-- Elementos decorativos de fundo -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-navy-900/5 rounded-full blur-3xl"></div>
+        <!-- Aspas decorativas gigantes de fundo -->
+        <div class="absolute top-20 left-10 text-brand-orange/5 font-serif text-[180px] leading-none select-none">“</div>
+        <div class="absolute bottom-20 right-10 text-brand-orange/5 font-serif text-[180px] leading-none select-none rotate-180">”</div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+        
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-16 max-w-3xl mx-auto reveal">
+            <div class="inline-flex items-center gap-2 bg-brand-lightOrange px-4 py-1.5 rounded-full text-brand-orange font-semibold text-sm mb-4 shadow-sm border border-brand-orange/15">
+                <svg class="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <span>Avaliações Reais • Mercado Livre</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold font-display text-navy-900">
+                Opiniões de <span class="text-brand-orange">nossos clientes</span>
+            </h2>
+            <div class="flex justify-center mt-4 mb-4">
+                <div class="w-20 h-1 bg-brand-orange rounded-full"></div>
+            </div>
+            <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+                Confira o que quem comprou e utilizou nossas resinas e gel coats na prática diz sobre a qualidade, facilidade de uso e rendimento.
+            </p>
+        </div>
+
+        <!-- Grid de 3 Cards com Prints Reais do Mercado Livre -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <!-- Card 1: Comentário Carenagem de Moto (comentariosmariana2.png) -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between overflow-hidden reveal">
+                <div>
+                    <!-- Badge superior do Mercado Livre -->
+                    <div class="px-6 py-4 bg-gray-50/80 border-b border-gray-100 flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="flex text-yellow-400 text-sm">★★★★★</span>
+                            <span class="text-xs font-bold text-navy-900 ml-1">5.0</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                            <svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Compra Verificada
+                        </span>
+                    </div>
+
+                    <!-- Imagem real do print do Mercado Livre -->
+                    <div class="p-4 bg-white flex items-center justify-center border-b border-gray-100">
+                        <img src="img/comentariosmariana2.png" alt="Avaliação real no Mercado Livre - Carenagem de moto com resina MW Química" 
+                             class="w-full h-auto object-contain rounded-xl shadow-inner border border-gray-100 hover:scale-[1.02] transition-transform duration-300">
+                    </div>
+
+                    <!-- Conteúdo textual e destaque -->
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Aplicação Automotiva</span>
+                        <p class="text-gray-700 font-medium text-sm md:text-base leading-relaxed italic mb-4">
+                            "Utilizei o produto para fazer uma carenagem de moto. Recomendo."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 py-3 bg-gray-50 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                    <span>Avaliado no Mercado Livre</span>
+                    <span class="text-brand-orange font-semibold">100% Recomendado</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Comentário Praticidade do Conta-Gotas (comentariosmariana3.png) -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between overflow-hidden reveal delay-100">
+                <div>
+                    <!-- Badge superior do Mercado Livre -->
+                    <div class="px-6 py-4 bg-gray-50/80 border-b border-gray-100 flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="flex text-yellow-400 text-sm">★★★★★</span>
+                            <span class="text-xs font-bold text-navy-900 ml-1">5.0</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                            <svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Compra Verificada
+                        </span>
+                    </div>
+
+                    <!-- Imagem real do print do Mercado Livre -->
+                    <div class="p-4 bg-white flex items-center justify-center border-b border-gray-100">
+                        <img src="img/comentariosmariana3.png" alt="Avaliação real no Mercado Livre - Praticidade do conta gotas e qualidade superior" 
+                             class="w-full h-auto object-contain rounded-xl shadow-inner border border-gray-100 hover:scale-[1.02] transition-transform duration-300">
+                    </div>
+
+                    <!-- Conteúdo textual e destaque -->
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Praticidade & Rendimento</span>
+                        <p class="text-gray-700 font-medium text-sm md:text-base leading-relaxed italic mb-4">
+                            "Melhor que a lata da loja de tintas. O conta gotas é muito prático adorei."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 py-3 bg-gray-50 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                    <span>Avaliado no Mercado Livre</span>
+                    <span class="text-brand-orange font-semibold">100% Recomendado</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Comentário Profissional experiente (comentariosmariana4.png) -->
+            <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 flex flex-col justify-between overflow-hidden reveal delay-200">
+                <div>
+                    <!-- Badge superior do Mercado Livre -->
+                    <div class="px-6 py-4 bg-gray-50/80 border-b border-gray-100 flex items-center justify-between">
+                        <div class="flex items-center gap-1.5">
+                            <span class="flex text-yellow-400 text-sm">★★★★★</span>
+                            <span class="text-xs font-bold text-navy-900 ml-1">5.0</span>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold bg-emerald-50 text-emerald-700 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
+                            <svg class="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Compra Verificada
+                        </span>
+                    </div>
+
+                    <!-- Imagem real do print do Mercado Livre -->
+                    <div class="p-4 bg-white flex items-center justify-center border-b border-gray-100">
+                        <img src="img/comentariosmariana4.png" alt="Avaliação real no Mercado Livre - Qualidade sem igual e ótimo preço" 
+                             class="w-full h-auto object-contain rounded-xl shadow-inner border border-gray-100 hover:scale-[1.02] transition-transform duration-300">
+                    </div>
+
+                    <!-- Conteúdo textual e destaque -->
+                    <div class="p-6">
+                        <span class="text-xs uppercase tracking-wider font-bold text-brand-orange mb-1.5 block">Opinião de Especialista</span>
+                        <p class="text-gray-700 font-medium text-sm md:text-base leading-relaxed italic mb-4">
+                            "Adorei ...trabalho com resina a anos e essa tem uma qualidade sem igual. Super recomendo e o preço está otimo."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="px-6 py-3 bg-gray-50 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
+                    <span>Avaliado no Mercado Livre</span>
+                    <span class="text-brand-orange font-semibold">100% Recomendado</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Barra Inferior de Prova Social e Reputação no Mercado Livre -->
+        <div class="mt-16 bg-navy-900 rounded-3xl p-8 md:p-10 shadow-xl reveal">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+                <div class="flex flex-col sm:flex-row items-center gap-5">
+                    <div class="w-16 h-16 rounded-2xl bg-yellow-400/10 border border-yellow-400/30 flex items-center justify-center text-yellow-400 text-3xl font-black shrink-0">
+                        ★
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-center sm:justify-start gap-2 mb-1">
+                            <span class="text-white text-2xl font-bold font-display">Reputação Máxima</span>
+                            <span class="text-yellow-400 text-lg">★★★★★</span>
+                            <span class="text-white/80 text-sm font-semibold">(4.9/5.0)</span>
+                        </div>
+                        <p class="text-white/70 text-sm md:text-base max-w-xl">
+                            Centenas de clientes atendidos com nota máxima no Mercado Livre. Qualidade química garantida, envio rápido e suporte técnico direto de fábrica.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
+                    <a href="https://wa.me/5511989810614?text=Ol%C3%A1%2C%20vi%20as%20avalia%C3%A7%C3%B5es%20no%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20os%20produtos" 
+                       target="_blank" rel="noopener noreferrer"
+                       class="w-full sm:w-auto bg-brand-orange hover:bg-brand-orangeHover text-white px-7 py-3.5 rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                        </svg>
+                        <span>Falar com Especialista</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <!-- Contato e Mapa -->
+<!-- Seção de Contato Reformulada - Endereço e Mapa Corrigidos -->
+<section id="contato" class="py-28 bg-white relative overflow-hidden">
+    
+    <!-- Elementos decorativos de fundo -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-navy-900/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+        
+        <!-- Cabeçalho da seção -->
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 bg-brand-lightOrange px-4 py-1.5 rounded-full text-brand-orange font-semibold text-sm mb-4 shadow-sm">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                Fale Conosco
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold font-display text-navy-900">
+                Vamos criar <span class="text-brand-orange">soluções incríveis</span> juntos?
+            </h2>
+            <div class="flex justify-center mt-4">
+                <div class="w-20 h-1 bg-brand-orange rounded-full"></div>
+            </div>
+            <p class="text-gray-500 max-w-2xl mx-auto mt-6">
+                Estamos prontos para atender você. Preencha o formulário ou utilize nossos canais de atendimento.
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+            
+            <!-- Coluna 1: Informações de contato + Formulário -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="bg-navy-900 px-6 py-4">
+                    <h3 class="text-white font-bold text-xl flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        Envie uma mensagem
+                    </h3>
+                </div>
+                
+                <!-- Formulário de contato com envio via WhatsApp -->
+                <form id="whatsapp-form" class="p-6 space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-navy-900 mb-1">Nome completo *</label>
+                            <input type="text" id="nome" name="nome" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all outline-none"
+                                   placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-navy-900 mb-1">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all outline-none"
+                                   placeholder="Nome da empresa">
+                        </div>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-sm font-medium text-navy-900 mb-1">E-mail *</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all outline-none"
+                                   placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-navy-900 mb-1">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all outline-none"
+                                   placeholder="(11) 99999-9999">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-navy-900 mb-1">Assunto *</label>
+                        <select id="assunto" name="assunto" required 
+                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all outline-none bg-white">
+                            <option value="">Selecione o assunto</option>
+                            <option>Orçamento de produtos</option>
+                            <option>Suporte técnico</option>
+                            <option>Parceria comercial</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-navy-900 mb-1">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required 
+                                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 transition-all outline-none resize-none"
+                                  placeholder="Descreva sua necessidade ou projeto..."></textarea>
+                    </div>
+                    
+                    <button type="submit" 
+                            class="w-full bg-brand-orange text-white font-bold py-3 rounded-xl hover:bg-brand-orangeHover hover:-translate-y-0.5 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group">
+                        <span>Enviar mensagem</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                    
+                    <p class="text-xs text-gray-400 text-center mt-4">
+                        * Campos obrigatórios. Seus dados estão seguros conosco.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Coluna 2: Informações de contato + Mapa (sem alterações) -->
+            <div class="space-y-6">
+                <div class="bg-gray-50 rounded-2xl p-6 shadow-md border border-gray-100">
+                    <h3 class="font-bold text-navy-900 text-xl mb-5 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-brand-orange" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        Canais de atendimento
+                    </h3>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4 group">
+                            <div class="bg-brand-orange/15 p-3 rounded-xl text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-lg">Visite nossa unidade</h4>
+                                <p class="text-gray-600">R. Srg. Laércio Lourenço, 493</p>
+                                <p class="text-gray-600">Jardim do Alvinopolis, Atibaia - SP, 12943-400</p>
+                                <a href="https://maps.google.com/?q=R.+Srg.+Laércio+Lourenço,+493+-+Jardim+do+Alvinopolis,+Atibaia+-+SP,+12943-400" target="_blank" class="text-brand-orange text-sm font-medium inline-flex items-center gap-1 mt-1 hover:gap-2 transition-all">
+                                    Ver rotas
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 group">
+                            <div class="bg-brand-orange/15 p-3 rounded-xl text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-lg">Atendimento rápido</h4>
+                                <p class="text-gray-600">(11) 98981-0614</p>
+                                <p class="text-gray-600">Mw_distribuidoraquimica@outlook.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 group">
+                            <div class="bg-brand-orange/15 p-3 rounded-xl text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-lg">Horário de atendimento</h4>
+                                <p class="text-gray-600">Segunda a Sexta: 08h às 18h</p>
+                                <p class="text-gray-600">Sábado: 09h às 13h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5511989810614" target="_blank" 
+                       class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-green-500 text-white px-6 py-3 rounded-xl font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.032 2.032c-5.43 0-9.9 4.47-9.9 9.9 0 1.76.46 3.46 1.33 4.96l-1.45 4.98 5.22-1.39c1.46.8 3.09 1.23 4.8 1.23 5.43 0 9.9-4.47 9.9-9.9 0-5.43-4.47-9.9-9.9-9.9z"/>
+                        </svg>
+                        Falar com especialista no WhatsApp
+                    </a>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden shadow-md border border-gray-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.457625602841!2d-46.52735562388719!3d-23.10975077910047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cecdb4a0c8d4b1%3A0x8c0b2c2a2e4c4e0!2sR.%20Srg.%20La%C3%A9rcio%20Louren%C3%A7o%2C%20493%20-%20Jardim%20do%20Alvinopolis%2C%20Atibaia%20-%20SP%2C%2012943-400!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" 
+                        title="Localização MW Química - Atibaia/SP" 
+                        class="grayscale hover:grayscale-0 transition-all duration-500">
+                    </iframe>
+                </div>
+                
+                <div class="flex items-center justify-center gap-4 text-xs text-gray-400">
+                    <span class="flex items-center gap-1"><svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A10 10 0 0010 20c.55 0 1.1-.03 1.64-.09a1 1 0 00.55-1.7 8 8 0 110-12.42 1 1 0 00.56-1.7A9.98 9.98 0 0010 2C5.58 2 2 5.58 2 10c0 1.1.18 2.16.5 3.15a1 1 0 001.84.18A7.98 7.98 0 012.166 5z" clip-rule="evenodd" /></svg>Dados protegidos</span>
+                    <span class="flex items-center gap-1"><svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4z" clip-rule="evenodd" /></svg>100% seguro</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Função para enviar os dados do formulário para o WhatsApp
+    document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Capturar valores dos campos
+        const nome = document.getElementById('nome').value.trim();
+        const empresa = document.getElementById('empresa').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const assunto = document.getElementById('assunto').value;
+        const mensagem = document.getElementById('mensagem').value.trim();
+        
+        // Validação básica
+        if (!nome || !email || !telefone || !assunto || !mensagem) {
+            alert('Por favor, preencha todos os campos obrigatórios.');
+            return;
+        }
+        
+        // Construir a mensagem formatada para o WhatsApp
+        let texto = `*NOVO CONTATO PELO SITE*\n\n`;
+        texto += `*Nome:* ${nome}\n`;
+        if (empresa) texto += `*Empresa:* ${empresa}\n`;
+        texto += `*E-mail:* ${email}\n`;
+        texto += `*Telefone:* ${telefone}\n`;
+        texto += `*Assunto:* ${assunto}\n`;
+        texto += `*Mensagem:*\n${mensagem}\n\n`;
+        texto += `--- Enviado via formulário do site MW Química ---`;
+        
+        // Codificar para URL
+        const textoCodificado = encodeURIComponent(texto);
+        
+        // Número do WhatsApp da empresa (já utilizado no botão)
+        const numeroWhatsApp = '5511989810614'; // sem o + e sem espaços
+        
+        // Redirecionar para o WhatsApp
+        window.open(`https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`, '_blank');
+        
+        // Opcional: limpar formulário ou mostrar mensagem de sucesso
+        alert('Mensagem preparada! Você será redirecionado para o WhatsApp para confirmar o envio.');
+    });
+</script>
+</main>
+
+<!-- Footer Reformulado - Design Premium e Funcional -->
+<footer class="bg-navy-900 text-white pt-20 pb-8 relative overflow-hidden">
+    
+    <!-- Elemento decorativo de fundo (opcional) -->
+    <div class="absolute inset-0 pointer-events-none opacity-10">
+        <svg class="absolute bottom-0 right-0 w-96 h-96 text-brand-orange" viewBox="0 0 200 200" fill="currentColor">
+            <path d="M47.3,-65.1C60.1,-54.3,67.8,-36.8,71.9,-18.6C76,-0.4,76.4,18.6,68.9,33.5C61.4,48.5,46.1,59.4,29.7,66.2C13.3,73,-4.3,75.7,-20.8,71.4C-37.3,67.1,-52.7,55.8,-63.2,41.1C-73.7,26.4,-79.3,8.4,-76.6,-9C-73.9,-26.4,-62.9,-43.2,-48.5,-55.2C-34.1,-67.2,-16.3,-74.3,1.8,-76.5C19.9,-78.7,39.7,-75.9,47.3,-65.1Z" transform="translate(100 100) scale(1.5)" />
+        </svg>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 relative z-10">
+        
+        <!-- Grid principal do footer (4 colunas) -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-16">
+            
+            <!-- Coluna 1: Logo e descrição -->
+            <div class="lg:col-span-1">
+                <a href="#" class="text-3xl font-display font-bold tracking-tight text-white inline-block mb-5 group">
+                    MW<span class="text-brand-orange">QUIMICA</span>
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-brand-orange rounded-full"></span>
+                </a>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Tecnologia e excelência em resinas para projetos que exigem o melhor. Qualidade e suporte que transformam ideias em realidade.
+                </p>
+                <!-- Selos de qualidade e procedência -->
+                <div class="flex gap-3 mb-6">
+                    <img src="https://placehold.co/40x40/1E2A5E/F15A24?text=100%25" alt="100% Puro" class="bg-white/10 rounded-lg p-1 w-10 h-10">
+                    <img src="https://placehold.co/40x40/1E2A5E/F15A24?text=ML" alt="Mercado Líder Gold" class="bg-white/10 rounded-lg p-1 w-10 h-10">
+                    <img src="https://placehold.co/40x40/1E2A5E/F15A24?text=BR" alt="Indústria Nacional" class="bg-white/10 rounded-lg p-1 w-10 h-10">
+                </div>
+            </div>
+            
+            <!-- Coluna 2: Navegação -->
+            <div>
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-6 h-0.5 bg-brand-orange rounded-full"></span>
+                    Navegação
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Início</a></li>
+                    <li><a href="#sobre" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Sobre</a></li>
+                    <li><a href="#produtos" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Produtos</a></li>
+                    <li><a href="#vitrine-produtos" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Catálogo</a></li>
+                    <li><a href="#confianca" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Confiança</a></li>
+                    <li><a href="#aplicacoes" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Aplicações</a></li>
+                    <li><a href="#opinioes" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Opiniões</a></li>
+                    <li><a href="#contato" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 group"><span class="w-0 group-hover:w-2 h-0.5 bg-brand-orange transition-all"></span>Contato</a></li>
+                </ul>
+            </div>
+            
+            <!-- Coluna 3: Contato rápido -->
+            <div>
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-6 h-0.5 bg-brand-orange rounded-full"></span>
+                    Contato
+                </h4>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>R. Srg. Laércio Lourenço, 493 - Atibaia/SP</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span>(11) 98981-0614</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>Mw_distribuidoraquimica@outlook.com</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-400">
+                        <svg class="w-5 h-5 text-brand-orange mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Seg–Sex: 08h–18h | Sáb: 09h–13h</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Coluna 4: Newsletter e Redes Sociais -->
+            <div>
+                <h4 class="text-lg font-bold mb-6 flex items-center gap-2">
+                    <span class="w-6 h-0.5 bg-brand-orange rounded-full"></span>
+                    Acompanhe
+                </h4>
+                
+                <!-- Redes sociais -->
+                <div class="flex gap-4 mb-8">
+                    <a href="#" class="bg-white/10 hover:bg-brand-orange p-2 rounded-full transition-all duration-300 group" aria-label="LinkedIn">
+                        <svg class="w-5 h-5 text-white group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="bg-white/10 hover:bg-brand-orange p-2 rounded-full transition-all duration-300 group" aria-label="Instagram">
+                        <svg class="w-5 h-5 text-white group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="bg-white/10 hover:bg-brand-orange p-2 rounded-full transition-all duration-300 group" aria-label="Facebook">
+                        <svg class="w-5 h-5 text-white group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="bg-white/10 hover:bg-brand-orange p-2 rounded-full transition-all duration-300 group" aria-label="YouTube">
+                        <svg class="w-5 h-5 text-white group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.376.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.376-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+            
+            </div>
+        </div>
+        
+        <!-- Linha divisória e direitos autorais -->
+        <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+            <p>&copy; 2026 MW Química - Inovação em polímeros. MercadoLíder Gold. Todos os direitos reservados.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-brand-orange transition">Política de Privacidade</a>
+                <a href="#" class="hover:text-brand-orange transition">Termos de Uso</a>
+                <a href="#" class="hover:text-brand-orange transition">Certificações</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts unificados (header scroll + mobile menu + reveal + smooth + active link) -->
+<script>
+    (function() {
+        // 1. Efeito de scroll no header
+        const header = document.getElementById('header');
+        function handleHeaderScroll() {
+            if (window.scrollY > 20) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        }
+        window.addEventListener('scroll', handleHeaderScroll);
+        handleHeaderScroll(); // chamada inicial
+
+        // 2. Mobile menu toggle (com botão hambúrguer e X)
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        let isMenuOpen = false;
+
+        function openMenu() {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            menuBtn.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            // Altera o ícone para "X"
+            if (menuIcon) menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            isMenuOpen = true;
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            if (menuIcon) menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            isMenuOpen = false;
+        }
+
+        if (menuBtn) menuBtn.addEventListener('click', () => {
+            if (isMenuOpen) closeMenu();
+            else openMenu();
+        });
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+
+        // Fecha ao clicar nos links do menu mobile
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Fecha ao pressionar ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isMenuOpen) closeMenu();
+        });
+
+        // 3. Reveal animation (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 4. Smooth scroll para links internos (com offset do header fixo)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const offset = 90; // altura do header + folga
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    // Fecha menu mobile se estiver aberto
+                    if (isMenuOpen) closeMenu();
+                }
+            });
+        });
+
+        // 5. Destacar link ativo baseado na seção visível
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function highlightActiveLink() {
+            let current = '';
+            const scrollPos = window.scrollY + 100; // margem para ativar antes
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', highlightActiveLink);
+        highlightActiveLink(); // chamada inicial
+    })();
+</script>
+
+<script>
+(function(){
+    document.querySelectorAll('[data-track]').forEach(function(link){
+        link.addEventListener('click', function(){
+            var product = this.getAttribute('data-track');
+            if (typeof window.fbq === 'function') window.fbq('trackCustom', 'ProductClick', {product: product, source: 'landing-page'});
+            if (typeof window.gtag === 'function') window.gtag('event', 'product_click', {product_name: product, destination: 'mercado_livre'});
+        });
+    });
+})();
+</script>
+
+<!-- ==================== CONTROLADOR DE CARROSSEL DE PRODUTOS ==================== -->
+<script>
+(function initProductCarousels() {
+    const carousels = document.querySelectorAll('.product-carousel');
+    
+    carousels.forEach((carousel, carouselIdx) => {
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        if (totalSlides === 0) return;
+
+        function updateCarousel(index) {
+            // Ciclo circular para navegação infinita
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+
+            // Atualiza visibilidade dos slides
+            slides.forEach((slide, i) => {
+                if (i === currentIndex) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                    slide.classList.add('opacity-100', 'pointer-events-auto', 'z-10');
+                } else {
+                    slide.classList.remove('opacity-100', 'pointer-events-auto', 'z-10');
+                    slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                }
+            });
+
+            // Atualiza estilo dos dots indicadores
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.classList.add('bg-brand-orange', 'w-5');
+                    dot.classList.remove('bg-white/70', 'w-2');
+                    dot.setAttribute('aria-current', 'true');
+                } else {
+                    dot.classList.remove('bg-brand-orange', 'w-5');
+                    dot.classList.add('bg-white/70', 'w-2');
+                    dot.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        // Eventos dos botões de navegação lateral
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                updateCarousel(currentIndex - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                updateCarousel(currentIndex + 1);
+            });
+        }
+
+        // Eventos dos dots de navegação direta
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                updateCarousel(i);
+            });
+        });
+
+        // Suporte a gestos touch (swipe no mobile)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const swipeDistance = touchEndX - touchStartX;
+            if (Math.abs(swipeDistance) > 40) {
+                if (swipeDistance < 0) {
+                    // Swipe para a esquerda -> próximo
+                    updateCarousel(currentIndex + 1);
+                } else {
+                    // Swipe para a direita -> anterior
+                    updateCarousel(currentIndex - 1);
+                }
+            }
+        }, { passive: true });
+
+        // Inicializa o primeiro slide ativo
+        updateCarousel(0);
+    });
+})();
+</script>
+</body>
+</html>
